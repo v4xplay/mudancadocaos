@@ -16,6 +16,9 @@
   const juiz = S.sorteioUrl || "";
   let sorteio = S.sorteio || {}, premios = sorteio.premios || [], giro = 0;
 
+  // (veio do botão SORTEIO NO SITE do jogo: o ID já vem preenchido)
+  const idDoJogo = new URLSearchParams(location.search).get("id");
+  if (idDoJogo && document.getElementById("sId")) document.getElementById("sId").value = idDoJogo.slice(0, 20).toUpperCase();
   const avisar = (ok, texto) => { resposta.className = "resposta " + (ok ? "ok" : "erro"); resposta.innerHTML = texto; };
   const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const perdeu = p => /não foi|tente de novo|nada/i.test(p);
