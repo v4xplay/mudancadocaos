@@ -185,3 +185,11 @@ h1, h2, h3, .marca { font-family: "Lilita One", "Nunito", sans-serif; font-weigh
 .lista-simples li { margin: 8px 0; }
 .lista-simples li::marker { color: var(--laranja); }
 @media (max-width: 860px) { .menu a.aba-baixar { margin: 8px 0 0; text-align: center; } }
+
+/* ---------- a ROLETA do sorteio ---------- */
+.roleta-area { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; }
+.roleta-caixa { position: relative; width: min(560px, 100%); margin-inline: auto; aspect-ratio: 1; }
+.roleta-caixa canvas { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 0 10px #ffc21a, 0 0 0 16px #a54d00, var(--sombra); }
+.roleta-seta { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); width: 0; height: 0; z-index: 2;
+  border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 44px solid #fff; filter: drop-shadow(0 4px 4px rgba(0,0,0,0.5)); }
+@media (max-width: 860px) { .roleta-area { grid-template-columns: 1fr; } }

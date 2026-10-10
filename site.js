@@ -12,7 +12,7 @@
     ["fases", "fases.html", "Fases"],
     ["sorteios", "sorteios.html", "Sorteios"],
     ["suporte", "suporte.html", "Suporte e Ideias"],
-    ["baixar", "baixar.html", "⬇ Baixar"],
+    ["baixar", "baixar.html", "Baixar"],
   ];
   const topo = document.getElementById("topo");
   if (topo) {
@@ -41,7 +41,6 @@
   document.querySelectorAll("[data-baixar]").forEach(a => { a.href = S.baixar || "#"; a.target = "_blank"; a.rel = "noopener"; });
   document.querySelectorAll("[data-discord]").forEach(a => { a.href = S.discord || "#"; a.target = "_blank"; a.rel = "noopener"; });
   document.querySelectorAll("[data-versao]").forEach(e => { if (N.length) e.textContent = N[0].titulo + " · " + N[0].data; });
-  document.querySelectorAll("[data-tamanho]").forEach(e => { if (S.tamanho) e.textContent = "📦 " + S.tamanho; });
 
   // ---------- as FASES (com a foto grande ao clicar) ----------
   const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -81,7 +80,6 @@
       (p.texto ? "<p>" + esc(p.texto) + "</p>" : "") +
       "<ul>" + (p.itens || []).map(t => "<li>" + esc(t) + "</li>").join("") + "</ul>" +
       ((p.fotos || []).length ? '<div class="fotos-do-post">' + p.fotos.map(f => '<img loading="lazy" src="' + esc(f) + '" alt="">').join("") + "</div>" : "") +
-      (i === 0 ? '<div class="acoes"><a class="botao fantasma" href="baixar.html">Ir para a página de download →</a></div>' : "") +
       "</article>").join("");
   });
 

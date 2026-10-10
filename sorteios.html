@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sorteios — Mudança do Caos</title>
-<meta name="description" content="Sorteios de códigos e prêmios do Mudança do Caos.">
+<meta name="description" content="Gire a roleta e concorra a conjuntos exclusivos do Mudança do Caos!">
 <meta property="og:title" content="Sorteios — Mudança do Caos">
-<meta property="og:description" content="Sorteios de códigos e prêmios do Mudança do Caos.">
+<meta property="og:description" content="Gire a roleta e concorra a conjuntos exclusivos do Mudança do Caos!">
 <meta property="og:image" content="img/capa.png">
 <link rel="icon" href="img/icone.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,23 +20,26 @@
 
 <section class="titulo-de-pagina"><div class="miolo">
   <h1>Sorteios 🎁</h1>
-  <p>De vez em quando a gente sorteia CÓDIGOS com roupas e conjuntos especiais para usar no jogo.</p>
+  <p id="tituloSorteio">Gire a roleta e concorra a conjuntos exclusivos!</p>
 </div></section>
-<section class="secao" style="padding-top:24px"><div class="miolo duas-colunas">
-  <div class="cartao">
-    <h2 style="font-size:1.6rem;margin-bottom:14px">Como participar</h2>
-    <ol class="passos">
-      <li><b>Entre no Discord</b> do jogo — os sorteios são anunciados lá primeiro.</li>
-      <li><b>Siga as regras do sorteio</b> do momento (às vezes é mandar uma foto do jogo, às vezes é só reagir à mensagem).</li>
-      <li><b>Ganhou?</b> Você recebe o código no Discord. É só colocar o código no menu do jogo e o prêmio aparece na loja.</li>
-    </ol>
-    <a class="botao roxo" data-discord href="#">💬 Ir para o Discord</a>
+<section class="secao" style="padding-top:24px"><div class="miolo roleta-area">
+  <div class="roleta-caixa">
+    <div class="roleta-seta"></div>
+    <canvas id="roleta" width="560" height="560" aria-label="Roleta do sorteio"></canvas>
   </div>
-  <div class="cartao">
-    <h3 style="font-size:1.4rem;margin-bottom:10px">Sorteio agora</h3>
-    <p style="color:var(--texto-suave);margin:0 0 14px">Nenhum sorteio aberto no momento. Fique de olho no Discord: o próximo pode sair a qualquer hora!</p>
-    <div class="aviso">⚠️ A gente <b>nunca</b> pede senha, dinheiro ou dados de cartão para entregar prêmio.</div>
-  </div>
+  <form class="cartao formulario" id="formSorteio">
+    <h2 style="font-size:1.6rem">Participe</h2>
+    <p style="color:var(--texto-suave);margin:6px 0 0">Preencha e gire. <b>Cada pessoa gira uma vez</b> por sorteio.</p>
+    <label for="sNome">Seu nome no Discord</label>
+    <input id="sNome" name="nome" maxlength="40" required placeholder="Ex.: leozinho_123">
+    <label for="sId">Seu ID do jogo</label>
+    <input id="sId" name="id" maxlength="9" required placeholder="Ex.: ABCD-EFGH" style="text-transform:uppercase">
+    <div class="dica">O ID aparece no jogo em <b>LOJA → Conjuntos exclusivos</b> ("SEU ID").</div>
+    <button class="botao grande enviar" type="submit">🎰 GIRAR A ROLETA</button>
+    <div class="resposta" id="respostaSorteio"></div>
+    <div class="aviso" style="margin-top:16px">Ganhou? O V4X manda o <b>código</b> do prêmio no Discord. A gente <b>nunca</b> pede senha, dinheiro ou dados de cartão.</div>
+    <p style="margin:14px 0 0"><a data-discord href="#">Entrar no Discord</a> para receber o prêmio.</p>
+  </form>
 </div></section>
 
 </main>
@@ -44,5 +47,6 @@
 <script src="dados/site.js"></script>
 <script src="dados/novidades.js"></script>
 <script src="site.js"></script>
+<script src="roleta.js"></script>
 </body>
 </html>

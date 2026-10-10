@@ -1,6 +1,20 @@
 // Os dados do site (o Unity atualiza): o link de baixar, o Discord, o formulário e as fases.
 window.SITE = {
-  "tamanho": "164 MB",
+  "sorteio": {
+      "aberto": true,
+      "id": "lancamento-do-site",
+      "titulo": "Sorteio de lançamento do site: gire e concorra a um conjunto EXCLUSIVO!",
+      "premios": [
+          "Capitão Caos",
+          "Não foi dessa vez",
+          "Sombra Noturna",
+          "Palhaço Pipoca",
+          "Não foi dessa vez",
+          "Capitão Pirata",
+          "Super Cuecão",
+          "Não foi dessa vez"
+      ]
+  },
   "baixar": "https://drive.google.com/file/d/1OW53a1gVrFc4aMJ6VN5YE35ekzYIJRB0/view?usp=sharing",
   "discord": "https://discord.gg/zvc8dEdvgP",
   "webhookSuporte": "https://discord.com/api/webhooks/1558585633734139964/FPtB6iCt4jYQ9e2E83JMUvqY9kh5-K-IHafPybGHJLvp2TN0lbTQfBLLnYrmC8o2KRVD",
