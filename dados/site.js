@@ -1,5 +1,6 @@
 // Os dados do site (o Unity atualiza): o link de baixar, o Discord, o formulário e as fases.
 window.SITE = {
+  "sorteioUrl": "https://script.google.com/macros/s/AKfycbw0IsCZgLLC7eQdJF1SD-cEHRREdT-RgzZrlNcGSQesiwVJrlMga6sAP9p3kd_tMo6y/exec",
   "sorteio": {
       "aberto": true,
       "id": "lancamento-do-site-2",
