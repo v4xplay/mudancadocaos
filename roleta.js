@@ -64,7 +64,7 @@
   }
 
   function mostrarResultado(premio, nome, jaTinha, bilhete) {
-    if (jaTinha) { avisar(true, "Esse ID (ou nome) já girou <b>este mês</b>. Volte no mês que vem para girar de novo!"); return; }
+    if (jaTinha) { avisar(false, "Esse jogador já girou. <b>Não há mais giros.</b>"); return; }
     if (perdeu(premio)) { avisar(false, "😅 <b>" + esc(premio) + "</b>... Tente de novo no mês que vem!"); return; }
     if (!bilhete) { avisar(true, "🎉 Você ganhou: <b>" + esc(premio) + "</b>! Chame o V4X no Discord para receber."); return; }
     avisar(true, "🎉 Você ganhou: <b>" + esc(premio) + "</b>!" +
