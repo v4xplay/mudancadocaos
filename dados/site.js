@@ -2,7 +2,7 @@
 window.SITE = {
   "sorteio": {
       "aberto": true,
-      "id": "lancamento-do-site",
+      "id": "lancamento-do-site-2",
       "titulo": "Sorteio de lançamento do site: gire e concorra a um conjunto EXCLUSIVO!",
       "premios": [
           "Capitão Caos",
