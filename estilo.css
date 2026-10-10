@@ -1,0 +1,172 @@
+/* MUDANÇA DO CAOS — o site do jogo (cores do jogo: laranja do caminhão, amarelo, azul-noite) */
+:root {
+  --laranja: #ff8a00;
+  --laranja-escuro: #e06a00;
+  --amarelo: #ffc21a;
+  --noite: #141b33;
+  --noite-2: #1d2747;
+  --noite-3: #26335c;
+  --texto: #f4f6ff;
+  --texto-suave: #b9c2e0;
+  --verde: #3ddc84;
+  --vermelho: #ff5470;
+  --raio: 18px;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+  background: var(--noite);
+  color: var(--texto);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--amarelo); }
+h1, h2, h3, .marca { font-family: "Lilita One", "Nunito", sans-serif; font-weight: 400; letter-spacing: 0.5px; margin: 0; }
+
+.miolo { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+/* ---------- o topo (menu) ---------- */
+.topo {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(20, 27, 51, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.topo .miolo { display: flex; align-items: center; gap: 16px; min-height: 64px; }
+.marca { display: flex; align-items: center; gap: 10px; color: var(--texto); text-decoration: none; font-size: 1.35rem; white-space: nowrap; }
+.marca img { width: 38px; height: 38px; border-radius: 10px; }
+.marca span b { color: var(--laranja); font-weight: 400; }
+.menu { display: flex; gap: 4px; margin-left: auto; align-items: center; }
+.menu a { color: var(--texto-suave); text-decoration: none; padding: 8px 12px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; }
+.menu a:hover, .menu a.aqui { color: var(--texto); background: var(--noite-3); }
+.menu .botao { margin-left: 6px; }
+.abrir-menu { display: none; margin-left: auto; background: none; border: 0; color: var(--texto); font-size: 1.7rem; cursor: pointer; padding: 6px 10px; }
+
+/* ---------- botões ---------- */
+.botao {
+  display: inline-flex; align-items: center; gap: 10px; justify-content: center;
+  background: linear-gradient(180deg, var(--laranja), var(--laranja-escuro));
+  color: #fff !important; text-decoration: none; font-weight: 800;
+  padding: 12px 22px; border-radius: 14px; border: 0; cursor: pointer; font-size: 1rem;
+  box-shadow: 0 5px 0 #a54d00, var(--sombra);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.botao:hover { transform: translateY(-2px); }
+.botao:active { transform: translateY(3px); box-shadow: 0 2px 0 #a54d00; }
+.botao.grande { font-size: 1.25rem; padding: 16px 30px; border-radius: 18px; }
+.botao.roxo { background: linear-gradient(180deg, #6b7cff, #4b55d6); box-shadow: 0 5px 0 #2f37a0, var(--sombra); }
+.botao.fantasma { background: var(--noite-3); box-shadow: 0 5px 0 #121933; }
+
+/* ---------- a capa (início) ---------- */
+.capa {
+  position: relative; overflow: hidden;
+  min-height: min(88vh, 820px);
+  background-position: center top;
+  display: grid; align-items: end;
+  background: url("img/capa.png") center / cover no-repeat;
+}
+.capa::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,27,51,0) 0%, rgba(20,27,51,0) 45%, rgba(20,27,51,0.75) 72%, var(--noite) 100%); }
+.capa .miolo { position: relative; z-index: 1; padding: 120px 0 56px; }
+.capa h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } /* (o logo já está na arte da capa) */
+.capa h1 b { color: var(--laranja); font-weight: 400; display: block; }
+.capa p.chamada { font-size: clamp(1.05rem, 2.4vw, 1.35rem); max-width: 620px; margin: 16px 0 26px; color: #e9edff; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+.capa .acoes { display: flex; gap: 14px; flex-wrap: wrap; }
+.selo { display: inline-block; background: var(--amarelo); color: #2a1a00; font-weight: 900; padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; margin-bottom: 14px; }
+.versao-da-demo { margin-top: 14px; color: var(--texto-suave); font-size: 0.92rem; }
+
+/* ---------- seções ---------- */
+.secao { padding: 64px 0; }
+.secao h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 8px; }
+.secao .sub { color: var(--texto-suave); margin: 0 0 28px; max-width: 680px; }
+.titulo-de-pagina { padding: 56px 0 8px; }
+.titulo-de-pagina h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+.titulo-de-pagina p { color: var(--texto-suave); max-width: 700px; }
+
+/* os 3 motivos */
+.motivos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.motivo { background: var(--noite-2); border-radius: var(--raio); padding: 24px; border: 1px solid rgba(255,255,255,0.05); }
+.motivo .emoji { font-size: 2.2rem; }
+.motivo h3 { font-size: 1.35rem; margin: 8px 0 6px; }
+.motivo p { margin: 0; color: var(--texto-suave); }
+
+/* ---------- as fases (galeria) ---------- */
+.fases { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.fase { background: var(--noite-2); border-radius: var(--raio); overflow: hidden; border: 1px solid rgba(255,255,255,0.05); cursor: zoom-in; transition: transform 0.15s; text-align: left; color: inherit; font: inherit; padding: 0; }
+.fase:hover { transform: translateY(-4px); }
+.fase img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+.fase .texto { padding: 14px 16px 18px; }
+.fase h3 { font-size: 1.2rem; }
+.fase .tipo { display: inline-block; font-size: 0.75rem; font-weight: 800; padding: 2px 9px; border-radius: 999px; background: var(--noite-3); color: var(--amarelo); margin-bottom: 6px; }
+.fase .tipo.pvp { color: #fff; background: #c22d4a; }
+.fase .tipo.desafio { color: #2a1a00; background: var(--amarelo); }
+.fase p { margin: 6px 0 0; color: var(--texto-suave); font-size: 0.95rem; }
+
+/* a foto grande (clicou na fase) */
+.foto-grande { position: fixed; inset: 0; z-index: 100; background: rgba(5, 8, 20, 0.92); display: none; place-items: center; padding: 20px; }
+.foto-grande.aberta { display: grid; }
+.foto-grande figure { margin: 0; max-width: 1100px; width: 100%; }
+.foto-grande img { width: 100%; border-radius: var(--raio); }
+.foto-grande figcaption { margin-top: 14px; }
+.foto-grande figcaption h3 { font-size: 1.5rem; }
+.foto-grande figcaption p { color: var(--texto-suave); margin: 6px 0 0; }
+.foto-grande .fechar { position: absolute; top: 14px; right: 18px; background: none; border: 0; color: #fff; font-size: 2.2rem; cursor: pointer; }
+
+/* ---------- novidades (o blog) ---------- */
+.posts { display: grid; gap: 22px; }
+.post { background: var(--noite-2); border-radius: var(--raio); padding: 26px; border: 1px solid rgba(255,255,255,0.05); }
+.post .data { color: var(--texto-suave); font-size: 0.9rem; font-weight: 700; }
+.post h2, .post h3 { font-size: 1.7rem; margin: 4px 0 12px; }
+.post ul { margin: 0; padding-left: 20px; }
+.post li { margin: 6px 0; }
+.post li::marker { color: var(--laranja); }
+.post .fotos-do-post { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-top: 16px; }
+.post .fotos-do-post img { border-radius: 12px; aspect-ratio: 16 / 9; object-fit: cover; }
+.post.ultima { border: 2px solid var(--laranja); }
+.post .acoes { margin-top: 18px; }
+.mais-posts { text-align: center; margin-top: 24px; }
+
+/* ---------- cartões gerais (sorteios, suporte) ---------- */
+.cartao { background: var(--noite-2); border-radius: var(--raio); padding: 26px; border: 1px solid rgba(255,255,255,0.05); }
+.duas-colunas { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: start; }
+.passos { counter-reset: passo; list-style: none; padding: 0; margin: 0; }
+.passos li { counter-increment: passo; position: relative; padding: 4px 0 14px 48px; }
+.passos li::before { content: counter(passo); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--laranja); display: grid; place-items: center; font-weight: 900; }
+.aviso { background: rgba(255, 194, 26, 0.1); border: 1px solid rgba(255, 194, 26, 0.35); border-radius: 14px; padding: 14px 16px; color: #ffe7a3; }
+
+/* o formulário */
+.formulario label { display: block; font-weight: 800; margin: 14px 0 6px; }
+.formulario input, .formulario select, .formulario textarea {
+  width: 100%; background: var(--noite); color: var(--texto); border: 2px solid var(--noite-3);
+  border-radius: 12px; padding: 12px 14px; font: inherit;
+}
+.formulario textarea { min-height: 150px; resize: vertical; }
+.formulario input:focus, .formulario select:focus, .formulario textarea:focus { outline: none; border-color: var(--laranja); }
+.formulario .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.formulario .enviar { margin-top: 20px; width: 100%; }
+.formulario .dica { color: var(--texto-suave); font-size: 0.88rem; margin-top: 4px; }
+.resposta { margin-top: 14px; padding: 12px 14px; border-radius: 12px; display: none; font-weight: 700; }
+.resposta.ok { display: block; background: rgba(61, 220, 132, 0.12); color: var(--verde); }
+.resposta.erro { display: block; background: rgba(255, 84, 112, 0.12); color: var(--vermelho); }
+
+/* ---------- rodapé ---------- */
+.rodape { border-top: 1px solid rgba(255,255,255,0.06); padding: 32px 0 40px; margin-top: 40px; color: var(--texto-suave); font-size: 0.92rem; }
+.rodape .miolo { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; }
+.rodape a { color: var(--texto-suave); }
+
+/* ---------- celular ---------- */
+@media (max-width: 860px) {
+  .abrir-menu { display: block; }
+  .menu {
+    position: absolute; top: 64px; left: 0; right: 0; display: none; flex-direction: column; align-items: stretch;
+    background: var(--noite); padding: 10px 16px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .menu.aberto { display: flex; }
+  .menu .botao { margin: 8px 0 0; }
+  .motivos, .duas-colunas, .formulario .linha { grid-template-columns: 1fr; }
+  .capa .miolo { padding: 90px 0 40px; }
+}
