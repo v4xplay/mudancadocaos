@@ -170,3 +170,18 @@ h1, h2, h3, .marca { font-family: "Lilita One", "Nunito", sans-serif; font-weigh
   .motivos, .duas-colunas, .formulario .linha { grid-template-columns: 1fr; }
   .capa .miolo { padding: 90px 0 40px; }
 }
+
+/* ---------- a aba BAIXAR (o único botão de baixar do site) ---------- */
+.menu a.aba-baixar { color: #fff; background: linear-gradient(180deg, var(--laranja), var(--laranja-escuro)); margin-left: 6px; }
+.menu a.aba-baixar:hover, .menu a.aba-baixar.aqui { background: linear-gradient(180deg, #ff9d2a, var(--laranja)); }
+.baixar-cartao { text-align: center; }
+.baixar-icone { width: 110px; height: 110px; border-radius: 26px; margin: 4px auto 14px; box-shadow: var(--sombra); }
+.baixar-cartao h2 { font-size: 2rem; }
+.baixar-versao { color: var(--amarelo); font-weight: 800; margin: 6px 0 4px; }
+.baixar-detalhes { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; color: var(--texto-suave); margin: 0 0 22px; }
+.baixar-botao { width: 100%; font-size: 1.4rem; padding: 20px; }
+.dica-baixar { color: var(--texto-suave); font-size: 0.88rem; margin: 18px 0 0; }
+.lista-simples { margin: 0; padding-left: 20px; }
+.lista-simples li { margin: 8px 0; }
+.lista-simples li::marker { color: var(--laranja); }
+@media (max-width: 860px) { .menu a.aba-baixar { margin: 8px 0 0; text-align: center; } }

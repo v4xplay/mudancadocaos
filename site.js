@@ -12,6 +12,7 @@
     ["fases", "fases.html", "Fases"],
     ["sorteios", "sorteios.html", "Sorteios"],
     ["suporte", "suporte.html", "Suporte e Ideias"],
+    ["baixar", "baixar.html", "⬇ Baixar"],
   ];
   const topo = document.getElementById("topo");
   if (topo) {
@@ -21,8 +22,7 @@
       '<a class="marca" href="index.html"><img src="img/icone.png" alt=""><span>MUDANÇA DO <b>CAOS</b></span></a>' +
       '<button class="abrir-menu" aria-label="Abrir o menu">☰</button>' +
       '<nav class="menu">' +
-      paginas.map(p => '<a href="' + p[1] + '"' + (p[0] === aqui ? ' class="aqui"' : "") + ">" + p[2] + "</a>").join("") +
-      '<a class="botao" data-baixar href="#">⬇ Baixar</a>' +
+      paginas.map(p => '<a href="' + p[1] + '" class="' + (p[0] === "baixar" ? "aba-baixar " : "") + (p[0] === aqui ? "aqui" : "") + '">' + p[2] + "</a>").join("") +
       "</nav></div>";
     const menu = topo.querySelector(".menu");
     topo.querySelector(".abrir-menu").addEventListener("click", () => menu.classList.toggle("aberto"));
@@ -34,13 +34,14 @@
     rodape.className = "rodape";
     rodape.innerHTML =
       '<div class="miolo"><div>© ' + new Date().getFullYear() + " Mudança do Caos — feito por <b>V4X</b> (V4XPlay)</div>" +
-      '<div><a href="' + (S.discord || "#") + '" target="_blank" rel="noopener">Discord</a> · <a href="suporte.html">Suporte</a> · <a href="novidades.html">Novidades</a></div></div>';
+      '<div><a href="' + (S.discord || "#") + '" target="_blank" rel="noopener">Discord</a> · <a href="baixar.html">Baixar</a> · <a href="suporte.html">Suporte</a> · <a href="novidades.html">Novidades</a></div></div>';
   }
 
   // ---------- os botões de BAIXAR e de DISCORD ----------
   document.querySelectorAll("[data-baixar]").forEach(a => { a.href = S.baixar || "#"; a.target = "_blank"; a.rel = "noopener"; });
   document.querySelectorAll("[data-discord]").forEach(a => { a.href = S.discord || "#"; a.target = "_blank"; a.rel = "noopener"; });
   document.querySelectorAll("[data-versao]").forEach(e => { if (N.length) e.textContent = N[0].titulo + " · " + N[0].data; });
+  document.querySelectorAll("[data-tamanho]").forEach(e => { if (S.tamanho) e.textContent = "📦 " + S.tamanho; });
 
   // ---------- as FASES (com a foto grande ao clicar) ----------
   const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -80,7 +81,7 @@
       (p.texto ? "<p>" + esc(p.texto) + "</p>" : "") +
       "<ul>" + (p.itens || []).map(t => "<li>" + esc(t) + "</li>").join("") + "</ul>" +
       ((p.fotos || []).length ? '<div class="fotos-do-post">' + p.fotos.map(f => '<img loading="lazy" src="' + esc(f) + '" alt="">').join("") + "</div>" : "") +
-      (i === 0 ? '<div class="acoes"><a class="botao" data-baixar href="' + (S.baixar || "#") + '" target="_blank" rel="noopener">⬇ Baixar esta demo</a></div>' : "") +
+      (i === 0 ? '<div class="acoes"><a class="botao fantasma" href="baixar.html">Ir para a página de download →</a></div>' : "") +
       "</article>").join("");
   });
 
