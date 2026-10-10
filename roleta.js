@@ -61,8 +61,8 @@
   }
 
   function mostrarResultado(premio, nome, jaTinha) {
-    if (jaTinha) { avisar(true, "Você já girou neste sorteio: <b>" + esc(premio) + "</b>. Boa sorte no próximo!"); return; }
-    avisar(!perdeu(premio), perdeu(premio) ? "😅 <b>" + esc(premio) + "</b>... Fica para o próximo sorteio!"
+    if (jaTinha) { avisar(true, "Você já girou <b>este mês</b> e saiu: <b>" + esc(premio) + "</b>. Volte no mês que vem para girar de novo!"); return; }
+    avisar(!perdeu(premio), perdeu(premio) ? "😅 <b>" + esc(premio) + "</b>... Tente de novo no mês que vem!"
       : "🎉 Você ganhou: <b>" + esc(premio) + "</b>! O V4X vai te mandar o <b>código</b> no Discord (" + esc(nome) + ").");
   }
 
@@ -113,7 +113,7 @@
 
   // ---------- SEM o juiz (o jeito antigo: 1 giro por navegador) ----------
   function iniciarSemJuiz() {
-    const chave = "sorteio." + (sorteio.id || "1");
+    const agora = new Date(), chave = "sorteio." + (sorteio.id || "1") + "." + agora.getFullYear() + "-" + (agora.getMonth() + 1); // (1 por mês)
     if (!prepararTela()) return;
     document.fonts && document.fonts.ready.then(() => desenhar(giro));
     if (localStorage.getItem(chave)) { botao.disabled = true; mostrarResultado(localStorage.getItem(chave), "", true); }
