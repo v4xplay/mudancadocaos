@@ -128,9 +128,10 @@
       e.preventDefault();
       if (localStorage.getItem(chave)) return;
       const d = Object.fromEntries(new FormData(form));
-      const nome = (d.nome || "").trim(), id = (d.id || "").trim().toUpperCase();
+      const nome = (d.nome || "").trim(), achou = (d.id || "").toUpperCase().match(/([A-Z0-9]{4})\s*-?\s*([A-Z0-9]{4})(?![A-Z0-9])/);
+      const id = achou ? achou[1] + "-" + achou[2] : "";
       if (nome.length < 2) { avisar(false, "Coloque o seu nome do Discord."); return; }
-      if (!/^[A-Z0-9]{4}-?[A-Z0-9]{4}$/.test(id)) { avisar(false, "O ID do jogo tem 8 letras/números (ex.: ABCD-EFGH). Ele aparece na LOJA do jogo, em Conjuntos exclusivos."); return; }
+      if (!id) { avisar(false, "O ID do jogo tem 8 letras/números (ex.: ABCD-EFGH). Ele aparece na LOJA do jogo, em Conjuntos exclusivos."); return; }
       botao.disabled = true;
       resposta.className = "resposta";
       const n = new Uint32Array(1); crypto.getRandomValues(n);
