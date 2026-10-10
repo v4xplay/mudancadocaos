@@ -193,3 +193,10 @@ h1, h2, h3, .marca { font-family: "Lilita One", "Nunito", sans-serif; font-weigh
 .roleta-seta { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); width: 0; height: 0; z-index: 2;
   border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 44px solid #fff; filter: drop-shadow(0 4px 4px rgba(0,0,0,0.5)); }
 @media (max-width: 860px) { .roleta-area { grid-template-columns: 1fr; } }
+
+/* o BILHETE de quem ganhou o sorteio */
+.bilhete { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 14px 0; padding: 14px 16px; border-radius: 14px;
+  background: var(--noite); border: 2px dashed var(--amarelo); color: var(--texto); }
+.bilhete span { font-size: 0.8rem; font-weight: 900; color: var(--texto-suave); letter-spacing: 1px; }
+.bilhete b { font-family: "Lilita One", sans-serif; font-weight: 400; font-size: 1.8rem; color: var(--amarelo); letter-spacing: 2px; }
+.bilhete .botao { padding: 8px 14px; font-size: 0.9rem; margin-left: auto; }

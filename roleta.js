@@ -60,10 +60,17 @@
     });
   }
 
-  function mostrarResultado(premio, nome, jaTinha) {
-    if (jaTinha) { avisar(true, "Você já girou <b>este mês</b> e saiu: <b>" + esc(premio) + "</b>. Volte no mês que vem para girar de novo!"); return; }
-    avisar(!perdeu(premio), perdeu(premio) ? "😅 <b>" + esc(premio) + "</b>... Tente de novo no mês que vem!"
-      : "🎉 Você ganhou: <b>" + esc(premio) + "</b>! O V4X vai te mandar o <b>código</b> no Discord (" + esc(nome) + ").");
+  function mostrarResultado(premio, nome, jaTinha, bilhete) {
+    if (jaTinha) { avisar(true, "Esse ID (ou nome) já girou <b>este mês</b>. Volte no mês que vem para girar de novo!"); return; }
+    if (perdeu(premio)) { avisar(false, "😅 <b>" + esc(premio) + "</b>... Tente de novo no mês que vem!"); return; }
+    if (!bilhete) { avisar(true, "🎉 Você ganhou: <b>" + esc(premio) + "</b>! Chame o V4X no Discord para receber."); return; }
+    avisar(true, "🎉 Você ganhou: <b>" + esc(premio) + "</b>!" +
+      '<div class="bilhete"><span>SEU BILHETE</span><b id="bilheteTexto">' + esc(bilhete) + '</b><button type="button" class="botao fantasma" id="copiarBilhete">Copiar</button></div>' +
+      "<b>Para receber:</b> entre no Discord, <b>abra um ticket</b> e cole o seu bilhete. " +
+      "⚠️ <b>Guarde o bilhete agora</b> (tire um print): ele só aparece esta vez, e só quem tem o bilhete recebe o prêmio." +
+      '<div style="margin-top:12px"><a class="botao roxo" href="' + esc(S.discord || "#") + '" target="_blank" rel="noopener">💬 Abrir o Discord</a></div>');
+    const b = document.getElementById("copiarBilhete");
+    if (b) b.addEventListener("click", () => { navigator.clipboard && navigator.clipboard.writeText(bilhete); b.textContent = "Copiado! ✓"; });
   }
 
   function prepararTela() {
@@ -105,9 +112,9 @@
         return;
       }
       if (r.erro) { avisar(false, esc(r.erro)); botao.disabled = false; return; }
-      if (r.jaGirou) { if (r.indice >= 0) await girarAte(r.indice); mostrarResultado(r.premio, d.nome, true); return; }
+      if (r.jaGirou) { mostrarResultado(r.premio, d.nome, true); return; }
       await girarAte(r.indice);
-      mostrarResultado(r.premio, d.nome, false);
+      mostrarResultado(r.premio, d.nome, false, r.bilhete);
     });
   }
 
