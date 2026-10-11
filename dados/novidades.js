@@ -2,6 +2,25 @@
 // Campos: titulo (Demo N), build, data, chamada (o título bonito), texto (a apresentação), itens, fotos, video (opcional).
 window.NOVIDADES = [
   {
+    "titulo": "Demo 17",
+    "build": "Build 445",
+    "data": "11/10/2026",
+    "chamada": "Medalhas, níveis e uma coroa",
+    "texto": "Agora tudo o que você faz conta. São 24 conquistas para ganhar — algumas bem escondidas nas fases — e cada mudança te dá experiência para subir de nível, ganhar dinheiro, títulos e conjuntos de presente. Quem chegar em 20 conquistas vira o REI DA MUDANÇA.",
+    "itens": [
+      "CONQUISTAS: 24 medalhas (mudança, cuidado, tempo, amigos, voo e umas SECRETAS escondidas nas fases). Cada uma dá um prêmio em R$.",
+      "COLECIONADOR: faça 20 conquistas e ganhe o conjunto exclusivo REI DA MUDANÇA.",
+      "NÍVEL DO JOGADOR: cada mudança e cada conquista dá XP. Suba de nível e ganhe dinheiro, títulos e conjuntos de presente.",
+      "AVIÃO: pushback de verdade, as nuvens não cortam mais o avião e as pontes de embarque estão em todos os portões.",
+      "SITE: botão novo no menu para o mudancadocaos.store, e o SORTEIO NO SITE direto da Loja."
+    ],
+    "fotos": [
+      "img/capa.png",
+      "img/fases/VooDaMudanca.png",
+      "img/fases/Mansao.png"
+    ]
+  },
+  {
     "titulo": "Demo 16",
     "build": "Build 428",
     "data": "09/10/2026",
@@ -211,9 +230,9 @@ window.NOVIDADES = [
 // EM BREVE: só para dar curiosidade (nada muito detalhado!)
 window.EM_BREVE = [
   {
-    "icone": "🏆",
-    "titulo": "Prove que você é o rei da mudança",
-    "texto": "Tem coisa sendo anotada a cada mudança que você faz... e um dia isso vai valer alguma coisa."
+    "icone": "🛒",
+    "titulo": "Uma feira onde vale tudo",
+    "texto": "Barracas, gritaria e muita coisa voando de um lado para o outro... e dois times querendo levar tudo."
   },
   {
     "icone": "🐾",
