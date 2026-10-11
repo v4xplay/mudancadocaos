@@ -200,3 +200,35 @@ h1, h2, h3, .marca { font-family: "Lilita One", "Nunito", sans-serif; font-weigh
 .bilhete span { font-size: 0.8rem; font-weight: 900; color: var(--texto-suave); letter-spacing: 1px; }
 .bilhete b { font-family: "Lilita One", sans-serif; font-weight: 400; font-size: 1.8rem; color: var(--amarelo); letter-spacing: 2px; }
 .bilhete .botao { padding: 8px 14px; font-size: 0.9rem; margin-left: auto; }
+
+/* ---------- NOVIDADES (v2): imagens grandes, letra bonita, Em breve ---------- */
+.video-destaque { border-radius: var(--raio); overflow: hidden; box-shadow: var(--sombra); border: 3px solid var(--laranja); background: #000; }
+.video-destaque video { display: block; width: 100%; max-height: 620px; object-fit: cover; }
+.posts { gap: 34px; }
+.post { padding: 30px; }
+.post-topo { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+.post-demo { font-family: "Lilita One", sans-serif; font-size: 1.15rem; color: var(--laranja); letter-spacing: 0.5px; }
+.post-build { background: var(--noite-3); color: var(--texto-suave); font-weight: 800; font-size: 0.8rem; padding: 3px 10px; border-radius: 999px; }
+.post-data { color: var(--texto-suave); font-size: 0.88rem; font-weight: 700; }
+.post-nova { background: var(--amarelo); color: #2a1a00; font-weight: 900; font-size: 0.75rem; padding: 3px 10px; border-radius: 999px; }
+.post h3 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.1; margin: 4px 0 12px; }
+.post-texto { font-size: 1.12rem; line-height: 1.65; color: #e3e8ff; margin: 0 0 20px; max-width: 860px; }
+.post-video { width: 100%; border-radius: 14px; margin: 0 0 14px; display: block; background: #000; }
+.post-fotos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0 0 22px; }
+.post-fotos img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; cursor: zoom-in; transition: transform 0.15s; }
+.post-fotos img:hover { transform: scale(1.015); }
+.post-fotos img.grande, .post-fotos.uma img { grid-column: 1 / -1; }
+.post h4 { font-family: "Lilita One", sans-serif; font-weight: 400; font-size: 1.15rem; color: var(--amarelo); margin: 0 0 8px; letter-spacing: 0.5px; }
+.post-itens { margin: 0; padding-left: 22px; font-size: 1.02rem; line-height: 1.6; }
+.post-itens li { margin: 8px 0; }
+.post-itens li b { color: var(--laranja); font-weight: 900; }
+.em-breve { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.em-breve-cartao { background: linear-gradient(160deg, var(--noite-2), var(--noite-3)); border: 1px dashed rgba(255, 194, 26, 0.45); border-radius: var(--raio); padding: 22px; }
+.em-breve-icone { font-size: 2.2rem; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); }
+.em-breve-cartao h3 { font-size: 1.2rem; margin: 10px 0 6px; }
+.em-breve-cartao p { margin: 0; color: var(--texto-suave); font-size: 0.95rem; }
+.convite-ideias { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 22px; border: 2px solid var(--laranja); flex-wrap: wrap; }
+.convite-ideias h3 { font-size: 1.5rem; }
+.convite-ideias p { margin: 6px 0 0; color: var(--texto-suave); max-width: 640px; }
+@media (max-width: 860px) { .em-breve { grid-template-columns: 1fr 1fr; } .post { padding: 20px; } }
+@media (max-width: 520px) { .em-breve, .post-fotos { grid-template-columns: 1fr; } }

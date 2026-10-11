@@ -60,6 +60,14 @@
   grande.addEventListener("click", e => { if (e.target === grande || e.target.classList.contains("fechar")) fechar(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") fechar(); });
   document.addEventListener("click", e => {
+    const foto = e.target.closest(".post-fotos img");
+    if (foto) {
+      grande.querySelector("img").src = foto.src;
+      grande.querySelector("h3").textContent = "";
+      grande.querySelector("p").textContent = "";
+      grande.classList.add("aberta");
+      return;
+    }
     const b = e.target.closest(".fase");
     if (!b) return;
     const f = (S.fases || [])[+b.dataset.i];
@@ -73,14 +81,30 @@
   document.querySelectorAll("[data-novidades]").forEach(caixa => {
     const quantas = parseInt(caixa.dataset.novidades || "99", 10);
     caixa.className = "posts";
-    caixa.innerHTML = N.slice(0, quantas).map((p, i) =>
-      '<article class="post' + (i === 0 ? " ultima" : "") + '">' +
-      '<div class="data">' + esc(p.data) + (i === 0 ? " · 🆕 a mais nova" : "") + "</div>" +
-      "<h3>" + esc(p.titulo) + "</h3>" +
-      (p.texto ? "<p>" + esc(p.texto) + "</p>" : "") +
-      "<ul>" + (p.itens || []).map(t => "<li>" + esc(t) + "</li>").join("") + "</ul>" +
-      ((p.fotos || []).length ? '<div class="fotos-do-post">' + p.fotos.map(f => '<img loading="lazy" src="' + esc(f) + '" alt="">').join("") + "</div>" : "") +
-      "</article>").join("");
+    // (o item "TÍTULO: texto" ganha o título em destaque)
+    const item = t => { const k = t.indexOf(": "); return k > 0 && k < 45 ? "<b>" + esc(t.slice(0, k)) + "</b> " + esc(t.slice(k + 2)) : esc(t); };
+    caixa.innerHTML = N.slice(0, quantas).map((p, i) => {
+      const fotos = p.fotos || [];
+      const midia = (p.video ? '<video class="post-video" src="' + esc(p.video) + '" autoplay muted loop playsinline controls></video>' : "") +
+        (fotos.length ? '<div class="post-fotos ' + (fotos.length === 1 ? "uma" : "") + '">' + fotos.map((f, k) =>
+          '<img loading="lazy" class="' + (k === 0 && !p.video ? "grande" : "") + '" src="' + esc(f) + '" alt="">').join("") + "</div>" : "");
+      return '<article class="post' + (i === 0 ? " ultima" : "") + '">' +
+        '<div class="post-topo"><span class="post-demo">' + esc(p.titulo) + "</span>" +
+        (p.build ? '<span class="post-build">' + esc(p.build) + "</span>" : "") +
+        '<span class="post-data">' + esc(p.data) + "</span>" + (i === 0 ? '<span class="post-nova">NOVA</span>' : "") + "</div>" +
+        "<h3>" + esc(p.chamada || p.titulo) + "</h3>" +
+        (p.texto ? '<p class="post-texto">' + esc(p.texto) + "</p>" : "") +
+        midia +
+        '<h4>O que tem de novo</h4><ul class="post-itens">' + (p.itens || []).map(t => "<li>" + item(t) + "</li>").join("") + "</ul>" +
+        "</article>";
+    }).join("");
+  });
+
+  // ---------- EM BREVE (só curiosidade) ----------
+  document.querySelectorAll("[data-em-breve]").forEach(caixa => {
+    caixa.className = "em-breve";
+    caixa.innerHTML = (window.EM_BREVE || []).map(e =>
+      '<div class="em-breve-cartao"><div class="em-breve-icone">' + esc(e.icone) + "</div><h3>" + esc(e.titulo) + "</h3><p>" + esc(e.texto) + "</p></div>").join("");
   });
 
   // ---------- o FORMULÁRIO de suporte (vai para um canal privado do Discord) ----------
