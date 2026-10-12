@@ -2,6 +2,27 @@
 // Campos: titulo (Demo N), build, data, chamada (o título bonito), texto (a apresentação), itens, fotos, video (opcional).
 window.NOVIDADES = [
   {
+    "titulo": "Demo 18",
+    "build": "Build 478",
+    "data": "12/10/2026",
+    "chamada": "4 mapas PVP, empilhadeira e guindaste",
+    "texto": "O PVP ficou ENORME. São quatro mapas novos, cada um com o seu jeito: uma feira de rua, um galpão com empilhadeira de verdade, um navio que balança em alto-mar e um castelo no gelo. E ainda chegaram 16 trapaças novas e os bichinhos que te seguem pela fase.",
+    "itens": [
+      "4 MAPAS PVP NOVOS: Feirão de Rua, Galpão de Mudanças, Navio Cargueiro e Castelo na Neve.",
+      "EMPILHADEIRA no Galpão: dirige, levanta os paletes pesados (que a mão não aguenta), sobe no caminhão... e quebra se bater demais.",
+      "NAVIO CARGUEIRO: o navio balança no mar, a carga vai no CONTÊINER do time e os GUINDASTES levam até 6 coisas de uma vez na rede.",
+      "16 TRAPAÇAS NOVAS no PVP: casca de banana, sabão, torta na cara, balão de água, pimenta, ímã, caixa de abelhas e muito mais.",
+      "PETS na Loja: cachorro, gato, tartaruga, porquinho, patinho e capivara te seguem pela fase.",
+      "Músicas novas no menu e o jogo mais protegido."
+    ],
+    "fotos": [
+      "img/fases/NavioPVP.png",
+      "img/fases/GalpaoPVP.png",
+      "img/fases/CasteloPVP.png",
+      "img/fases/FeiraPVP.png"
+    ]
+  },
+  {
     "titulo": "Demo 17",
     "build": "Build 445",
     "data": "11/10/2026",

@@ -83,6 +83,34 @@ window.SITE = {
       "charada": ""
     },
     {
+      "nome": "Feirão de Rua",
+      "foto": "FeiraPVP.png",
+      "tipo": "PVP",
+      "descricao": "Domingo de feira: doze barracas no meio da rua, do eletrônico à joia. Pega e corre para o caminhão do SEU time!",
+      "charada": ""
+    },
+    {
+      "nome": "Galpão de Mudanças",
+      "foto": "GalpaoPVP.png",
+      "tipo": "PVP",
+      "descricao": "Um depósito ENORME: prateleiras cheias, o cofre na triagem, a EMPILHADEIRA que dá para pilotar e o escritório de vidro.",
+      "charada": ""
+    },
+    {
+      "nome": "Navio Cargueiro",
+      "foto": "NavioPVP.png",
+      "tipo": "PVP",
+      "descricao": "Em alto-mar, num navio que BALANÇA: contêineres abertos com tesouro, GUINDASTES que dá para usar e tudo escorregando no convés.",
+      "charada": ""
+    },
+    {
+      "nome": "Castelo na Neve",
+      "foto": "CasteloPVP.png",
+      "tipo": "PVP",
+      "descricao": "O tesouro do rei num castelo no meio de um lago CONGELADO: pontes levadiças, neve caindo e gelo que escorrega muito!",
+      "charada": ""
+    },
+    {
       "nome": "Frágil: Não Abrir",
       "foto": "DesafioBomba.png",
       "tipo": "Desafio",
