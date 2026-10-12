@@ -120,7 +120,8 @@
     form.addEventListener("submit", async e => {
       e.preventDefault();
       const ultimo = +(localStorage.getItem("ultimoPedido") || 0);
-      if (Date.now() - ultimo < 60000) { avisar(false, "Calma! Espere 1 minutinho para mandar outro pedido."); return; }
+      const falta = Math.ceil((60000 - (Date.now() - ultimo)) / 1000);
+      if (falta > 0) { avisar(true, "✅ Seu último pedido já chegou para a gente! Para mandar outro, espere " + falta + " segundos."); return; }
       const d = Object.fromEntries(new FormData(form));
       if ((d.mensagem || "").trim().length < 10) { avisar(false, "Escreva um pouquinho mais (pelo menos 10 letras)."); return; }
       if (/https?:|www\.|t\.me|discord\.gg/i.test(Object.values(d).join(" "))) { avisar(false, "Por segurança, o formulário não aceita links. Escreva sem o link, por favor."); return; }
@@ -133,7 +134,7 @@
         if (!r.ok) throw new Error("sem ok");
         localStorage.setItem("ultimoPedido", String(Date.now()));
         form.reset();
-        avisar(true, "Recebido! Obrigado — a gente vai ler com carinho. 🚚💥");
+        avisar(true, "✅ Entregue! Seu pedido (" + (d.tipo || "Pedido") + ") já chegou para a gente. Obrigado! 🚚💥");
       } catch (err) {
         avisar(false, "Não consegui mandar agora. Tente de novo daqui a pouco, ou chame a gente no Discord.");
       } finally {
