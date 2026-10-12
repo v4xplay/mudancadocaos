@@ -18,7 +18,6 @@ window.SITE = {
   },
   "baixar": "https://drive.google.com/file/d/1OW53a1gVrFc4aMJ6VN5YE35ekzYIJRB0/view?usp=sharing",
   "discord": "https://discord.gg/zvc8dEdvgP",
-  "webhookSuporte": "https://discord.com/api/webhooks/1558585633734139964/FPtB6iCt4jYQ9e2E83JMUvqY9kh5-K-IHafPybGHJLvp2TN0lbTQfBLLnYrmC8o2KRVD",
   "fases": [
     {
       "nome": "Loucura do Quarto Andar",

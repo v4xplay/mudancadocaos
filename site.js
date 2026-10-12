@@ -107,12 +107,13 @@
       '<div class="em-breve-cartao"><div class="em-breve-icone">' + esc(e.icone) + "</div><h3>" + esc(e.titulo) + "</h3><p>" + esc(e.texto) + "</p></div>").join("");
   });
 
-  // ---------- o FORMULÁRIO de suporte (vai para um canal privado do Discord) ----------
+  // ---------- o FORMULÁRIO de suporte: vai para o "juiz" (planilha do Google), que confere e manda
+  // para o canal privado do Discord. O endereço do canal NÃO fica no site (ninguém consegue copiar). ----------
   const form = document.getElementById("formulario");
   if (form) {
     const resposta = document.getElementById("resposta");
     const avisar = (ok, texto) => { resposta.className = "resposta " + (ok ? "ok" : "erro"); resposta.textContent = texto; };
-    if (!S.webhookSuporte) {
+    if (!S.sorteioUrl) {
       form.querySelector(".enviar").disabled = true;
       avisar(false, "O formulário ainda não está ligado. Por enquanto, chame a gente no Discord!");
     }
@@ -122,27 +123,14 @@
       if (Date.now() - ultimo < 60000) { avisar(false, "Calma! Espere 1 minutinho para mandar outro pedido."); return; }
       const d = Object.fromEntries(new FormData(form));
       if ((d.mensagem || "").trim().length < 10) { avisar(false, "Escreva um pouquinho mais (pelo menos 10 letras)."); return; }
-      const cores = { "Problema no jogo": 0xff5470, "Ideia": 0x3ddc84, "Sorteio": 0xffc21a, "Outro": 0x6b7cff };
-      const corpo = {
-        username: "Site do Mudança do Caos",
-        allowed_mentions: { parse: [] },
-        embeds: [{
-          title: (d.tipo || "Pedido") + " — " + (d.nome || "sem nome").slice(0, 60),
-          description: d.mensagem.slice(0, 3500),
-          color: cores[d.tipo] || 0xff8a00,
-          fields: [
-            { name: "Contato", value: (d.contato || "(não deixou)").slice(0, 200), inline: true },
-            { name: "Versão do jogo", value: (d.versao || "(não disse)").slice(0, 60), inline: true },
-          ],
-          footer: { text: "Mandado pelo site" },
-          timestamp: new Date().toISOString(),
-        }],
-      };
+      if (/https?:|www\.|t\.me|discord\.gg/i.test(Object.values(d).join(" "))) { avisar(false, "Por segurança, o formulário não aceita links. Escreva sem o link, por favor."); return; }
+      const corpo = { acao: "suporte", nome: d.nome, tipo: d.tipo, mensagem: d.mensagem, versao: d.versao, contato: d.contato, site: d.site || "" };
       const botao = form.querySelector(".enviar");
       botao.disabled = true;
       try {
-        const r = await fetch(S.webhookSuporte, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(corpo) });
-        if (!r.ok) throw new Error(r.status);
+        const r = await (await fetch(S.sorteioUrl, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(corpo) })).json();
+        if (r.erro) { avisar(false, r.erro); return; }
+        if (!r.ok) throw new Error("sem ok");
         localStorage.setItem("ultimoPedido", String(Date.now()));
         form.reset();
         avisar(true, "Recebido! Obrigado — a gente vai ler com carinho. 🚚💥");
