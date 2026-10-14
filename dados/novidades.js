@@ -2,6 +2,15 @@
 // Campos: titulo (Demo N), build, data, chamada (o título bonito), texto (a apresentação), itens, fotos, video (opcional).
 window.NOVIDADES = [
   {
+    "titulo": "Demo 19",
+    "build": "Build 488",
+    "data": "14/10/2026",
+    "chamada": "Saiu a Demo 19!",
+    "texto": "Uma demo nova chegou, cheia de novidades. Veja o que mudou:",
+    "itens": ["ATUALIZAÇÃO BICHOS!", "FASE NOVA: CIRCO ESTRELA. A mudança do circo: lona gigante cheia de luzes, trailers dos artistas, depósito, bilheteria e uns 70 objetos de circo, de som e de palco (bola gigante, caixa do mágico, carrinho de pipoca, caixas de som, bateria...). Cuidado com o LEÃO BARÃO, use o CANHÃO HUMANO e a CAMA ELÁSTICA.", "FANTASIAS DE BICHO na Loja: dinossauro, tubarão, galinha, unicórnio e capivara (com a laranjinha!), com rabo que balança.", "FAZENDA: 3 GALINHAS de verdade (fogem, se debatem e escapam da mão) e uma COLMEIA (agitou demais, sai o enxame atrás de você).", "6 CONQUISTAS NOVAS (aba BICHOS e duas secretas), entre elas a MELHOR AMIGO.", "O boneco caído não fica mais rolando sem parar."],
+    "fotos": ["img/capa.png"]
+  },
+  {
     "titulo": "Demo 18",
     "build": "Build 478",
     "data": "12/10/2026",

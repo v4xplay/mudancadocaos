@@ -116,6 +116,13 @@ window.SITE = {
       "tipo": "Desafio",
       "descricao": "Um cliente que paga MUITO bem por uma mudança pequena: um sofá e sete caixas. Bom demais para ser verdade?",
       "charada": "Quem paga tão bem por tão pouco... está pagando pelo quê? Se ouvir um barulho estranho, não ignore."
+    },
+    {
+      "nome": "Circo Estrela",
+      "foto": "Circo.png",
+      "tipo": "Modo normal",
+      "descricao": "O circo vai para outra cidade: a lona listrada, o picadeiro, os trailers dos artistas... e o leão Barão, que não gosta de visita.",
+      "charada": "O Barão ruge para quem encosta na casa dele. O canhão leva longe, mas não pousa macio. E a cama elástica devolve tudo o que recebe."
     }
   ]
 };
