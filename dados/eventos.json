@@ -1,4 +1,4 @@
 {
-  "liberados": [],
-  "trancados": ["halloween"]
+  "liberados": ["halloween"],
+  "trancados": []
 }
