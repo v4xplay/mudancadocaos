@@ -123,6 +123,13 @@ window.SITE = {
       "tipo": "Modo normal",
       "descricao": "O circo vai para outra cidade: a lona listrada, o picadeiro, os trailers dos artistas... e o leão Barão, que não gosta de visita.",
       "charada": "O Barão ruge para quem encosta na casa dele. O canhão leva longe, mas não pousa macio. E a cama elástica devolve tudo o que recebe."
+    },
+    {
+      "nome": "Casarão da Colina Sombria",
+      "foto": "CasaAssombrada.png",
+      "tipo": "Evento (31/10)",
+      "descricao": "Noite de lua cheia: a mudança de um casarão abandonado no alto da colina, com cemitério, abóboras... e uma dona que não quer ir embora.",
+      "charada": "A dona da casa morreu há cem anos, mas não se mudou. Ela guarda o que é dela, apaga a luz quando quer... e só tem um jeito de acalmá-la."
     }
   ]
 };
