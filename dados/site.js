@@ -130,6 +130,13 @@ window.SITE = {
       "tipo": "Evento (31/10)",
       "descricao": "Noite de lua cheia: a mudança de um casarão abandonado no alto da colina, com cemitério, abóboras... e uma dona que não quer ir embora.",
       "charada": "A dona da casa morreu há cem anos, mas não se mudou. Ela guarda o que é dela, apaga a luz quando quer... e só tem um jeito de acalmá-la."
+    },
+    {
+      "nome": "Vila do Papai Noel",
+      "foto": "VilaDoNoel.png",
+      "tipo": "Evento (20/12)",
+      "descricao": "O Papai Noel cansou do frio e vai se mudar para o BRASIL! Leve a casa, a oficina de brinquedos e o estábulo das renas antes da meia-noite.",
+      "charada": "Os duendes não querem que ele vá embora. O gelo do lago não perdoa. E os enfeites de vidro quebram só de olhar."
     }
   ]
 };
