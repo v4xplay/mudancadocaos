@@ -33,7 +33,7 @@
   if (rodape) {
     rodape.className = "rodape";
     rodape.innerHTML =
-      '<div class="miolo"><div>© ' + new Date().getFullYear() + " Mudança do Caos — feito por <b>V4X</b> (V4XPlay)</div>" +
+      '<div class="miolo"><div>© ' + new Date().getFullYear() + " Mudança do Caos — feito por <b>V4X Studios</b></div>" +
       '<div><a href="' + (S.discord || "#") + '" target="_blank" rel="noopener">Discord</a> · <a href="baixar.html">Baixar</a> · <a href="suporte.html">Suporte</a> · <a href="novidades.html">Novidades</a></div></div>';
   }
 

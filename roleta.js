@@ -66,7 +66,7 @@
   function mostrarResultado(premio, nome, jaTinha, bilhete) {
     if (jaTinha) { avisar(false, "Esse jogador já girou. <b>Não há mais giros.</b>"); return; }
     if (perdeu(premio)) { avisar(false, "😅 <b>" + esc(premio) + "</b>... Tente de novo no mês que vem!"); return; }
-    if (!bilhete) { avisar(true, "🎉 Você ganhou: <b>" + esc(premio) + "</b>! Chame o V4X no Discord para receber."); return; }
+    if (!bilhete) { avisar(true, "🎉 Você ganhou: <b>" + esc(premio) + "</b>! Chame a V4X Studios no Discord para receber."); return; }
     avisar(true, "🎉 Você ganhou: <b>" + esc(premio) + "</b>!" +
       '<div class="bilhete"><span>SEU BILHETE</span><b id="bilheteTexto">' + esc(bilhete) + '</b><button type="button" class="botao fantasma" id="copiarBilhete">Copiar</button></div>' +
       "<b>Para receber:</b> entre no Discord, <b>abra um ticket</b> e cole o seu bilhete. " +
