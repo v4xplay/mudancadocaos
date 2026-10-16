@@ -2,6 +2,15 @@
 // Campos: titulo (Demo N), build, data, chamada (o título bonito), texto (a apresentação), itens, fotos, video (opcional).
 window.NOVIDADES = [
   {
+    "titulo": "Demo 21",
+    "build": "Build 535",
+    "data": "15/10/2026",
+    "chamada": "Saiu a Demo 21!",
+    "texto": "Uma demo nova chegou, cheia de novidades. Veja o que mudou:",
+    "itens": ["Melhorias e correções."],
+    "fotos": ["img/capa.png"]
+  },
+  {
     "titulo": "Demo 20",
     "build": "Build 521",
     "data": "14/10/2026",
