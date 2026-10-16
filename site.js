@@ -85,9 +85,10 @@
     const item = t => { const k = t.indexOf(": "); return k > 0 && k < 45 ? "<b>" + esc(t.slice(0, k)) + "</b> " + esc(t.slice(k + 2)) : esc(t); };
     caixa.innerHTML = N.slice(0, quantas).map((p, i) => {
       const fotos = p.fotos || [];
-      const midia = (p.video ? '<video class="post-video" src="' + esc(p.video) + '" autoplay muted loop playsinline controls></video>' : "") +
+      const midia = (p.youtube ? '<div class="post-youtube"><iframe src="https://www.youtube-nocookie.com/embed/' + esc(p.youtube) + '" title="Trailer" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>' : "") +
+        (p.video ? '<video class="post-video" src="' + esc(p.video) + '" autoplay muted loop playsinline controls></video>' : "") +
         (fotos.length ? '<div class="post-fotos ' + (fotos.length === 1 ? "uma" : "") + '">' + fotos.map((f, k) =>
-          '<img loading="lazy" class="' + (k === 0 && !p.video ? "grande" : "") + '" src="' + esc(f) + '" alt="">').join("") + "</div>" : "");
+          '<img loading="lazy" class="' + (k === 0 && !p.video && !p.youtube ? "grande" : "") + '" src="' + esc(f) + '" alt="">').join("") + "</div>" : "");
       return '<article class="post' + (i === 0 ? " ultima" : "") + '">' +
         '<div class="post-topo"><span class="post-demo">' + esc(p.titulo) + "</span>" +
         (p.build ? '<span class="post-build">' + esc(p.build) + "</span>" : "") +

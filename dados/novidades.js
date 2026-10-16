@@ -17,7 +17,18 @@ window.NOVIDADES = [
     "chamada": "Saiu a Demo 20!",
     "texto": "Uma demo nova chegou, cheia de novidades. Veja o que mudou:",
     "itens": ["EVENTO DE HALLOWEEN: CASARÃO DA COLINA SOMBRIA (abre no dia 31/10!). Antes disso o cartão da fase aparece TRANCADO no menu, com a contagem.", "Uma caça aos OBJETOS AMALDIÇOADOS da Dona Ofélia (crânios, abóboras, círios, boneca, livro de feitiço, espelho, chave e caixinha de música). De perto eles sussurram e brilham. Caiu forte? QUEBRA e volta escondido num lugar PIOR.", "O CONDE DRÁCULA te espera na catacumba com o contrato... e a chave? \"Deixei lá na porta.\" Cuidado com a FRESTA da porta.", "Lá dentro é BREU. Leve uma LANTERNA (tecla L liga e desliga).", "Uma CRIATURA mora na casa: se ela te pegar, você vai para a CELA do porão e só um amigo te solta (segurando os DOIS botões do mouse na porta). Ela odeia LUZ: aponte a lanterna na cara dela e ela foge. Ou entre num GUARDA-ROUPA e AGACHE (Ctrl): ela não te vê.", "ZUMBIS no cemitério de cima, raios, apagões, vultos... e à MEIA-NOITE a Dona Ofélia acorda: vocês têm 2 minutos para ir embora.", "Fase só em PRIMEIRA PESSOA. Todos pegos = fim da partida.", "Terminou o casarão? Ganha o PRÊMIO do evento: a LANTERNA DE ABÓBORA!", "LANTERNAS na Loja (aba nova LANTERNA): velha (pisca...), forte e de cabeça. Valem para todos os seus personagens, como o pet.", "PERSONAGENS EXCLUSIVOS de Halloween (só com CÓDIGO, nos sorteios): CONDE DRÁCULA, ESQUELETO, VAMPIRO, MÚMIA e FANTASMA.", "6 CONQUISTAS NOVAS (aba HALLOWEEN e uma secreta).", "Loja: na aba CINTO agora dá para ficar SEM CINTO."],
-    "fotos": ["img/capa.png"]
+    "fotos": [
+      "img/halloween/casarao-1.jpg",
+      "img/halloween/casarao-3.jpg",
+      "img/halloween/casarao-4.jpg",
+      "img/halloween/casarao-2.jpg",
+      "img/halloween/casarao-5.jpg",
+      "img/halloween/casarao-6.jpg",
+      "img/halloween/casarao-7.jpg",
+      "img/halloween/casarao-8.jpg",
+      "img/halloween/casarao-9.jpg",
+      "img/halloween/casarao-10.jpg"
+    ]
   },
   {
     "titulo": "Demo 19",
