@@ -5,19 +5,20 @@ window.NOVIDADES = [
     "titulo": "Demo 22",
     "build": "Build 537",
     "data": "15/10/2026",
-    "chamada": "Saiu a Demo 22!",
-    "texto": "Uma demo nova chegou, cheia de novidades. Veja o que mudou:",
-    "itens": ["Melhorias e correções."],
-    "fotos": ["img/capa.png"]
+    "chamada": "O bicho do casarão ficou mais justo!",
+    "texto": "Testamos o Casarão com amigos e ajustamos o que estava difícil demais:",
+    "itens": ["CASARÃO: quem não tem lanterna da Loja ganha a LANTERNA VELHA emprestada (ninguém fica no escuro total).", "O BICHO do casarão ficou mais justo: agora ele mora no SÓTÃO e só desce quando alguém sobe para o andar de cima.", "Lanterna na cara do bicho: ele grita, SOBE correndo, se esconde e some por 30 segundos."],
+    "fotos": ["img/halloween/casarao-5.jpg", "img/halloween/casarao-6.jpg"]
   },
   {
     "titulo": "Demo 21",
     "build": "Build 535",
     "data": "15/10/2026",
-    "chamada": "Saiu a Demo 21!",
-    "texto": "Uma demo nova chegou, cheia de novidades. Veja o que mudou:",
-    "itens": ["Melhorias e correções."],
-    "fotos": ["img/capa.png"]
+    "chamada": "V4X Studios e o trailer do Halloween!",
+    "texto": "Uma demo de bastidores, preparando os eventos que vêm aí:",
+    "itens": ["O estúdio agora se chama V4X STUDIOS (nos créditos do menu, no caminhão e no LEIA-ME).", "Saiu o TRAILER do evento de Halloween, feito dentro do próprio jogo (veja no YouTube e no TikTok)!", "EM BREVE: um evento de NATAL. O cartão da fase já aparece TRANCADO no menu, com a contagem."],
+    "youtube": "FxDxZYB-dTI",
+    "fotos": ["img/halloween/casarao-1.jpg", "img/halloween/casarao-3.jpg"]
   },
   {
     "titulo": "Demo 20",
