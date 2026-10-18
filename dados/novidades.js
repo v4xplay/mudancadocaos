@@ -2,6 +2,16 @@
 // Campos: titulo (Demo N), build, data, chamada (o título bonito), texto (a apresentação), itens, fotos, video (opcional).
 window.NOVIDADES = [
   {
+    "titulo": "Demo 23",
+    "build": "Build 559",
+    "data": "18/10/2026",
+    "chamada": "Chegou o NATAL na Mudança do Caos!",
+    "texto": "A Vila do Papai Noel abre no dia 20/12. O Papai Noel precisa de ajuda para entregar os presentes... e os duendes travessos não vão facilitar!",
+    "itens": ["EVENTO DE NATAL: A VILA DO PAPAI NOEL (abre no dia 20/12!). O Papai Noel precisa de ajuda: não é mudança, é a ENTREGA DOS PRESENTES de todas as crianças!", "Uns 90 PRESENTES e BRINQUEDOS para levar: caixas de presente de todo tamanho (a GIGANTE precisa de 2 pessoas), bicicletas, patinetes, skates, ursos, bonecas, cavalinho de balanço, trenzinho, robôs, caixas de ENFEITES DE VIDRO (quebram por nada!) e o SACO DO NOEL.", "No lugar do caminhão vem o TRENÓ DO PAPAI NOEL com 5 RENAS (o Rodolfo na frente, de nariz vermelho aceso): ele chega VOANDO e vai embora decolando com os presentes.", "A vila é CHEIA de DUENDES: andando, carregando presentes, conversando, trabalhando na oficina. E a MAMÃE NOEL conta histórias perto da lareira.", "A OFICINA DE BRINQUEDOS funciona: a esteira passa os brinquedos pelo EMBRULHADOR e um trenzinho roda nos trilhos do teto. Coloque algo na esteira e ela leva!", "Cuidado com os DUENDES TRAVESSOS: eles aparecem num estouro, roubam um presente e fogem. Encoste neles para pegar de volta... ou procure onde esconderam (o presente fica brilhando)!", "O LAGO CONGELADO escorrega de verdade. Neve caindo, aurora boreal, chalés com pisca-pisca e a árvore de Natal gigante.", "PRÊMIO do evento: o pet RENA para quem terminar a entrega!", "PERSONAGENS EXCLUSIVOS de Natal (só com CÓDIGO, nos sorteios): PAPAI NOEL, MAMÃE NOEL, DUENDE, DUENDE TRAVESSO e a fantasia de RENA.", "7 CONQUISTAS NOVAS (aba NATAL e uma secreta)."],
+    "youtube": "CTsWMgmxtNg",
+    "fotos": ["img/fases/VilaDoNoel.png"]
+  },
+  {
     "titulo": "Demo 22",
     "build": "Build 537",
     "data": "15/10/2026",
